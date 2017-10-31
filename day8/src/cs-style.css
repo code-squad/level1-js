@@ -7,7 +7,16 @@ h1 {
     text-align: center;
 }
 
+#main {
+  background-color: gray;
+}
+
 p {
     font-family: verdana;
     font-size: 20px;
+}
+
+button {
+  font-family: verdana;
+  font-size: 20px;
 }
