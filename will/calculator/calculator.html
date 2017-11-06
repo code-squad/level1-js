@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang = "ko">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="./cs-style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>저는 계산기예요</h1>
+  </br>
+    <form name = "test">
+    <input id="screen" value="">
+  </br>
+    <input id="output" value="">
+    </form>
+    <br>
+      <button id = "btnClear" onclick="clearNum();">Clear</button>
+      <button id = "btnErase" onclick="eraseNum();"><-</button>
+      <button id = "btnDivide" onclick="button_click('/');">/</button>
+    </br>
+    <br>
+      <button id = "btn7" onclick="button_click('7');">7</button>
+      <button id = "btn8" onclick="button_click('8');">8</button>
+      <button id = "btn9" onclick="button_click('9');">9</button>
+      <button id = "btnMultiply" onclick="button_click('*');">X</button>
+    </br>
+    <br>
+      <button id = "btn4" onclick="button_click('4');">4</button>
+      <button id = "btn5" onclick="button_click('5');">5</button>
+      <button id = "btn6" onclick="button_click('6');">6</button>
+      <button id = "btnMinus" onclick="button_click('-');">-</button>
+    </br>
+    <br>
+      <button id = "btn1" onclick="button_click('1');">1</button>
+      <button id = "btn2" onclick="button_click('2');">2</button>
+      <button id = "btn3" onclick="button_click('3');">3</button>
+      <button id = "btnPlus" onclick="button_click('+');">+</button>
+    </br>
+    <br>
+      <button id = "btn0" onclick="button_click('0');">0</button>
+      <button id = "btnDot" onclick="button_click('.');">.</button>
+      <button id = "btnEqual" onclick="answer();">=</button>
+    <script src = "addButton.js"> </script>
+  </body>
+</html>
