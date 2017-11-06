@@ -1,0 +1,28 @@
+
+body{
+   width: 414px;
+    height: 580px;    
+    padding: 4px;
+    border: 5px solid red;
+}
+div {
+  width:413px;
+  height:80px;
+  font-size:30px;
+  text-align:right;
+  background-color: #393E46;
+  color:white;
+
+  
+}
+button {
+  width: 100px;
+  height: 100px;
+  background-color:#00ADB5;
+  font-size:25px;
+  color:#EEEEEE;
+  border-width: 10px;
+  
+}
+
+
