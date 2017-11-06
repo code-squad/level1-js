@@ -1,0 +1,47 @@
+<html>
+  <title>HTML CALCULATOR</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="calculator.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+
+    <h1>CALCULATOR</h1>
+
+    <h3 id='buttonresult'></h3>
+    <h2 id='totalResult'></h2>
+
+    <div id='zeroLine'>
+    <button class='colorNormal' onclick="getFunc(value)" value="C">AC</button>
+    <button class='colorNormal' onclick="getFunc(value)" value="%">%</button>
+    <button class='colorDouble' onclick="getFunc(value)" value="=">=</button>
+    
+    </div>
+    <div id='firstLine'>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="1">1</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="2">2</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="3">3</button>
+    <button class='colorNormal' onclick="getFunc(value)" value="+">+</button>
+    </div>
+    <div id='secondLine'>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="4">4</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="5">5</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="6">6</button>
+    <button class='colorNormal' onclick="getFunc(value)" value="-">-</button>
+    </div>
+    <div id='thirdLine'>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="7">7</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="8">8</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value="9">9</button>
+    <button class='colorNormal' onclick="getFunc(value)" value="*">*</button>
+    </div>
+    <div id='fourthLine'>
+    <button class='nonColorDouble' onclick="getFunc(value)" value="0">0</button>
+    <button class='nonColorNormal' onclick="getFunc(value)" value=".">.</button>
+    <button class='colorNormal' onclick="getFunc(value)" value="/">/</button>
+    </div>
+
+    <script src="./calculator.js"></script>
+  </body>
+</html>
