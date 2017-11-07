@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+</head>
+<body>
+<div class="cal-body">
+    <div class="body-upper">
+        <div class="body-window" id="window"><span class="windownum" id="windownum"></span></div>
+    </div>
+    <div class="body-lower">
+        <div class="lowernol">
+            <button class="btn-hordouble" id="clearbtn" onclick="clearCal()">clear</button>
+            <button class="btn-single" onclick="checkNum('/')">/</button>
+            <button class="btn-single" onclick="checkNum('x')" >x</button>
+        </div>
+        <div class="lowernol">
+            <button class="btn-single" onclick="checkNum(7)">7</button>
+            <button class="btn-single" onclick="checkNum(8)">8</button>
+            <button class="btn-single" onclick="checkNum(9)">9</button>
+            <button class="btn-single" onclick="checkNum('-')">-</button>
+        </div>
+        <div class="lowernol">
+            <button class="btn-single" onclick="checkNum(4)">4</button>
+            <button class="btn-single" onclick="checkNum(5)">5</button>
+            <button class="btn-single" onclick="checkNum(6)">6</button>
+            <button class="btn-single" onclick="checkNum('+')">+</button>
+        </div>
+        <div class="lowerleft">
+            <button class="btn-single" onclick="checkNum(1)">1</button>
+            <button class="btn-single" onclick="checkNum(2)">2</button>
+            <button class="btn-single" onclick="checkNum(3)">3</button>
+            <button class="btn-hordouble2" id="zerobtn" onclick="checkNum(0)">0</button>
+            <button class="btn-single" onclick="checkNum('.')">.</button>
+        </div>
+        <div class="lowerright">
+            <button class="btn-verdouble" id="ver" onclick="resultNum()">=</button>
+        </div>
+    </div>
+</div>
+
+
+</body>
+<script src="index.js"></script>
+</html>
