@@ -1,4 +1,4 @@
-var canvas = document.getElementById("canvas");
+var canvas = document.getElementById("lion");
 var ctx = canvas.getContext("2d");
 ctx.lineWidth = "3";
 ctx.beginPath();
