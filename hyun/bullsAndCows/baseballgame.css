@@ -19,5 +19,5 @@ body{background: url("img/bg2.jpg");background-size: 1300px 900px; background-re
 #center>ul>li:last-child>#startBtn{width: 120px; height: 60px; background: url("img/play1.png"); background-size: 120px 60px; background-repeat: no-repeat;background-position: center;}
 
 /* footer */
-#footer{width: 400px; height: 190px; border: 1px dotted #000}
-#footer>#history{}
+#footer{width: 400px; height: 190px; padding-top: 10px; text-align: center; border: 1px dotted #000; background-color: #232d33;}
+#footer>p{height: 21px; padding-left: 10px; color: #fff; }

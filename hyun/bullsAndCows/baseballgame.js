@@ -1,9 +1,10 @@
-
 //랜덤값을 담을 배열
 var resultArr = [];
 var innings = 0;
 var strike = 0;
 var ball = 0;
+var count = 0;
+var innings = 1;
 
 /*
 //1. 중복없이 랜덤수 배열에 담기
@@ -28,64 +29,105 @@ console.log(resultArr);
 
 
 
-//입력받은 값을 닫을 배열
 var inputArr = [];
 
-document.getElementById("delBtn");
-document.getElementById("first");
-document.getElementById("second");
-document.getElementById("third");
+document.getElementById("startBtn").disabled = true;
 
 
-function displayText() {
-    document.getElementById("output").innerHTML = "click";
-
-}
-
-//버튼을 클릭했을때
 function myBtnClick(num) {
 
-	//document.getElementById("output").innerHTML = num;
-	for(var i = 0; i < 3; i++){
-			if(i >= 3){
-				alert("숫자는 3개까지 입력가능")
-			}else if(i == 0){
-				inputArr.push(num);
-				document.getElementById("first").innerHTML = inputArr[0];
-				document.getElementById("second").innerHTML = inputArr[1];
-				document.getElementById("third").innerHTML = inputArr[2];
-			}
+	inputArr.push(num);
 
+	document.getElementById("input"+count).innerHTML = inputArr[count];	
+	document.getElementById("btn" + num).disabled = true;
+	count++;
+
+	if(count == 3){
+		buttonDisAble();
+		document.getElementById("startBtn").disabled = false;
 	}
 
 
+
 }
-
-
 
 function startBtnClick(){
 
+		check();
+		var p = document.createElement("p");  
+		var inn = document.getElementById("history");
+		inn.appendChild(p).innerHTML = innings + "회 - strike : " + strike + ", ball : " + ball + ". 입력번호 : " + inputArr;	
+		document.getElementById("output").innerHTML = strike + " strike, " + ball + " ball.";
+		if(strike == 3){
+			gameEnd();
+			//document.getElementById("center").remove();
+		}else if(strike == 0 && ball == 0){
+			document.getElementById("output").innerHTML = "Out";
+			clean();
+			inputInit();
+			buttonAble();
+		}else{
+			clean();
+			inputInit();
+			buttonAble();
+		}
 
-	console.log(inputArr);
 
-	check();
-	console.log("strike",strike);
-	console.log("ball",ball);
+	if(innings == 9){
+		check();
+		clean();
+		document.getElementById("startBtn").disabled = true;
+		document.getElementById("output").innerHTML = "Game Over";
+		alert("Game Over");
+		for (var i = 0; i < 10; i++ ){
+			document.getElementById("btn"+i).disabled = true;
+		}	
+	}
 
 
+	innings++;
 	gameEnd();
+	
 
 }
 
 
+function clean(){
+		strike = 0;
+		ball = 0;
+		count = 0;
+		inputArr = [];
+}
+
+function delBtnClick(){
+	buttonAble();
+	document.getElementById("input0").innerHTML = "-";
+	document.getElementById("input1").innerHTML = "-";
+	document.getElementById("input2").innerHTML = "-";
+	clean();
+}
 
 
 
-
-//같은수가 같은 자리에 있으면 스트라이크, 다른자리에 있으면 볼, 같은 수가 없으면 낫싱	
+//같은수가 같은 자리에 있으면 스트라이크, 다른자리에 있으면 볼	
 function check(){
 
+document.getElementById("startBtn").disabled = true;
+	for (var j = 0; j < 3; j++) {
+  		for (var k = 0; k < 3; k++) {
+    		if (resultArr[j] == inputArr[k]) {
+      			if (j === k) {
+        			strike++;
+      			} else {
+        			ball++;
+      			}
+      			break;
+    		}
+  		}
+	}
 
+/*
+	//하드코딩
 	var inputNum1 = inputArr[0];
 	var inputNum2 = inputArr[1];
 	var inputNum3 = inputArr[2];	
@@ -119,33 +161,9 @@ function check(){
 	if(resultArr[2] == inputNum3){	
 		strike++;
 	}
-
-
-/*	
-	for (var j = 0; j < 4; j++) {
-  		for (var k = 0; k < 4; k++) {
-    		if (resultArr[j] == inputArr[k]) {
-      			if (j === k) {
-        			strike++;
-      			} else {
-        			ball++;
-      			}
-      			break;
-    		}
-  		}
-	}
 */
-
 	
 };
-
-function noting(){
-	for(var i = 0; i < resultArr; i++){
-		//resultArr != inputArr
-	}
-	
-}
-
 
 
 function gameEnd(){
@@ -153,7 +171,10 @@ function gameEnd(){
 		if(resultArr[0] == inputArr[0]){
 			if(resultArr[1] == inputArr[1]){
 				if(resultArr[2] == inputArr[2]){
-					document.getElementById("output").innerHTML = "홈런";
+					document.getElementById("output").innerHTML = "홈런!!! + _ + 게임끝났고요 Bye~";
+					buttonDisAble();
+					document.getElementById("startBtn").disabled = true;
+					
 				}
 			}			
 		}
@@ -162,7 +183,22 @@ function gameEnd(){
 };
 
 
+function inputInit(){
+	document.getElementById("input0").innerHTML = "-";
+	document.getElementById("input1").innerHTML = "-";
+	document.getElementById("input2").innerHTML = "-";
+}
 
+function buttonAble(){
+	for(var i = 0; i < 10; i ++){
+		document.getElementById("btn"+i).disabled = false;
+	}
+}
 
+function buttonDisAble(){
+	for(var i = 0; i < 10; i ++){
+		document.getElementById("btn"+i).disabled = true;
+	}
+}
 
 
