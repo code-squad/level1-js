@@ -1,0 +1,14 @@
+
+.die{
+    width: 20px;
+    height: 20px;
+    float: left;
+    background-color: red;
+    margin-left: 5px;
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.diewrap{
+    clear: left;
+}
