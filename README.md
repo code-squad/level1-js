@@ -10,4 +10,4 @@
 4. 같은 이름의 브랜치로 pull request
 5. 가끔 merge 해서 다른 사람의 코드도 구경할 것 
 
-[완성작 구경하기](https://code-squad.github.com/code-squad/level1-js)
+[완성작 구경하기](https://code-squad.github.io/level1-js)

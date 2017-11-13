@@ -1,0 +1,29 @@
+body {
+    background-color: #2c2f35;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+}
+
+#dealer, #player {
+  color : white;
+}
+
+#message {
+  font-size: 26px;
+  color : magenta;
+  font-style: italic;
+}
+
+#manual {
+  color : orange;
+  font-size: 26px;
+  font-weight: bold;
+}
+
+#manualMessage {
+  color : #dedfe2;
+}

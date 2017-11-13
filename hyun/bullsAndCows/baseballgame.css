@@ -1,0 +1,23 @@
+*{margin: 0 auto;}
+body{background: url("img/bg2.jpg");background-size: 1300px 900px; background-repeat: no-repeat; background-position: center;}
+#wrap{width: 400px; margin:0 auto;}
+
+/* header */
+#header{width: 400px; height: 170px; margin: 0 auto;}
+#header>ol{*zoom:1; width: 300px; height: 60px; margin: 10px auto; padding-left: 110px;}
+#header>ol:after{display: block;clear: :both; content: '';}
+#header>ol>li>p{float: left; width: 40px; height: 40px; margin-right: 20px; text-align: center; line-height: 40px; background-color: #fff}
+#delBtn{width: 35px; height: 35px; margin-top: 5px; border: none; background: url("img/btnback.png");background-size: 35px 35px; background-repeat: no-repeat; background-position: center;}
+#output{height: 100px;text-align: center; font-size: 30px; color: #fff; line-height: 100px; background: url("img/view.jpg"); background-size: 400px 100px; background-repeat: no-repeat; background-position: center;}
+
+/* center */
+#center{width: 400px; height: 250px; }
+#center>ul{*zoom:1; width: 180px; height: 240px; margin: 0 auto; background-color: #fff}
+#center>ul:after{display: :block;clear: both; content: '';}
+#center>ul>li{float: left; }
+#center>ul>li>button{width: 60px; height: 60px; font-size: 13px; font-style: bold; background: url("img/numball.png"); background-size: 50px 50px;background-repeat: no-repeat;background-position: center;}
+#center>ul>li:last-child>#startBtn{width: 120px; height: 60px; background: url("img/play1.png"); background-size: 120px 60px; background-repeat: no-repeat;background-position: center;}
+
+/* footer */
+#footer{width: 400px; height: 190px; padding-top: 10px; text-align: center; border: 1px dotted #000; background-color: #232d33;}
+#footer>p{height: 21px; padding-left: 10px; color: #fff; }

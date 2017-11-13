@@ -1,5 +1,3 @@
-document.getElementsByTagName("h1")[0].style.fontSize = "40px";
-
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
 ctx.strokeRect(0, 0, 640, 480);
