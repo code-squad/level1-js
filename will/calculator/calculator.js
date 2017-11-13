@@ -1,17 +1,32 @@
-// $(document).ready(function(){
-//     $("p").click(function(){
-//         $(this).delay(2000).hide();
-//     });
-// });
-
-var firstVal = 0;
-var secondVal = 0;
-
+var a = [".", "+", "-", "/", "*", "=", ""];
 
 function button_click(n) {
+  var str = test.screen.value;
+  for(var i = 0; i < 6; i++) {
+    if(str[0] === a[i + 1]) {
+      test.screen.value = "";
+      test.output.value = "";
+    }
+    for(var j = 0; j < 6; j++) {
+      if(str.indexOf(a[i] + a[j]) !== -1) {
+        test.screen.value = str.substring(0,str.length - 2) + str.substring(str.length - 1);
+        test.output.value = str.substring(0,str.length - 2) + str.substring(str.length - 1);;
+      }
+    }
+  }
+
+  if(str.length === 23) {
+    return;
+  }
+
+  if(str[0] === ".") {
+    test.screen.value = "0.";
+    test.output.value = "0.";
+  }
+
   test.screen.value += n;
   test.output.value += n;
-}
+  }
 
 function eraseNum() {
   var str = test.screen.value;

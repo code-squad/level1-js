@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="./blackjack.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>blackjack </h1>
+  <canvas id="canvas" width="550" height="350"></canvas></br></br>
+  <div id="dealer">dealer : <span id="dealerScore">" "</span></div>
+  <div id="player">player : <span id="playerScore"></span></div>
+  <span id='message'>""</span></br>
+  <div id='btn'>
+    <button id='btnHit' onclick="player.hit(shuffledCards);">hit</button>
+    <button id='btnStand' onclick="player.stand(shuffledCards);">stand</button>
+    <button id='btnNewGame' onclick="newGame();">new game</button>
+  </div></br>
+  <div id='manual'>manual</div>
+    <div id="manualMessage">
+      카드의 합이 21과 가장 가까운 사람이 승리한다. 하지만 21을 넘으면 패배한다</br>
+      J, Q, K는 10으로 계산하고, Ace는 자신에게 유리한 방향으로 1 또는 11 중 선택할 수 있다</br>
+      dealer는 카드의 합이 17 미만이면 의무적으로 카드를 추가로 받는다</br>
+      <font color="#38e2a4">hit : </font>카드를 추가로 한 장 더 받는다</br>
+      <font color="#38e2a4">stand : </font>카드를 더 이상 받지 않는다</br>
+      <font color="#38e2a4">blackjack : </font>카드의 총 합이 21이 되었음을 의미</br>
+      <font color="#38e2a4">burst : </font>카드의 총 합이 21을 넘었음을 의미
+    </div>
+  <script src="./blackjack5.js"> </script>
+</body>
+</html>
