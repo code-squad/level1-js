@@ -1,0 +1,52 @@
+<html>
+  <title>HANGMAN</title>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="hangMan.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>HANGMAN</h1>
+
+    <h1 id=life>LIFE</h1>
+    <h2 id='result'></h2>
+    <button id='hint' onclick="giveHint()">CLICK TO HINT!!</button>
+
+    <div id='firstline'>
+      <button class="userBtn" onclick="check(value)" value="a">a</button>
+      <button class="userBtn" onclick="check(value)" value="b">b</button>
+      <button class="userBtn" onclick="check(value)" value="c">c</button>
+      <button class="userBtn" onclick="check(value)" value="d">d</button>
+      <button class="userBtn" onclick="check(value)" value="e">e</button>
+      <button class="userBtn" onclick="check(value)" value="f">f</button>
+      <button class="userBtn" onclick="check(value)" value="g">g</button>
+      <button class="userBtn" onclick="check(value)" value="h">h</button>
+      <button class="userBtn" onclick="check(value)" value="i">i</button>
+      <button class="userBtn" onclick="check(value)" value="j">j</button>
+      <button class="userBtn" onclick="check(value)" value="k">k</button>
+      <button class="userBtn" onclick="check(value)" value="l">l</button>
+      <button class="userBtn" onclick="check(value)" value="m">m</button>
+    </div>
+    <div id='secondline'>
+      <button class="userBtn" onclick="check(value)" value="n">n</button>
+      <button class="userBtn" onclick="check(value)" value="o">o</button>
+      <button class="userBtn" onclick="check(value)" value="p">p</button>
+      <button class="userBtn" onclick="check(value)" value="q">q</button>
+      <button class="userBtn" onclick="check(value)" value="r">r</button>
+      <button class="userBtn" onclick="check(value)" value="s">s</button>
+      <button class="userBtn" onclick="check(value)" value="t">t</button>
+      <button class="userBtn" onclick="check(value)" value="u">u</button>
+      <button class="userBtn" onclick="check(value)" value="v">v</button>
+      <button class="userBtn" onclick="check(value)" value="w">w</button>
+      <button class="userBtn" onclick="check(value)" value="x">x</button>
+      <button class="userBtn" onclick="check(value)" value="y">y</button>
+      <button class="userBtn" onclick="check(value)" value="z">z</button>
+    </div>
+
+    <h1 id=msg>GOOD LUCK!!!!</h1>
+
+    <canvas id="img" width="640" height="480"></canvas>
+
+    <script src="./hangMan.js"></script>
+  </body>
+</html>
