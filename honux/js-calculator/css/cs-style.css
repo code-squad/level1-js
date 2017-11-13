@@ -1,0 +1,46 @@
+#main {
+	background-color: #d7dddb;
+	width: 300px;
+	height: 400px;  
+	border-radius: 5px;
+	padding: 30px;
+}
+
+#num {
+	background-color: #4f8a83;
+	border-radius: 5px;
+	padding: 10px;
+	font-size: 20px;  
+	text-align: right;
+}
+
+#area {
+	background-color: #aaaaaa;
+	padding: 10px;
+	font-size: 20px;    
+}
+
+h1 {
+	color: #e76278;
+}
+
+button { 
+	width: 64px;
+	border:0;
+	font-size: 40px;
+	background-color: #fac699;
+	margin: 3px;
+	padding: 5px;
+	color: #712164;
+}
+
+.double {
+	width: 140px;
+	backgound-color: red;
+}
+
+.op {
+	background-color: #712164;
+	color: #ffffff;
+}
+
