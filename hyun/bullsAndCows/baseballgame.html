@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+	<head>
+		<meta charset="utf-8">	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href ="reset.css">
+		<link rel="stylesheet" href ="baseballgame.css">
+	</head>
+		<body>
+			<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  			<div id='wrap'>
+  				<div id=header>
+  					<h1 id='title'></h1>
+  					<p id='output'></p>
+  					<ol>
+  						<li><p id="input0" value=0 ></p></li>
+  						<li><p id="input1" value=1 ></p></li>
+  						<li><p id="input2" value=2 ></p></li>
+  						<li><button type="button" id="delBtn" onclick="delBtnClick()"></button></li>
+  					</ol>
+  				</div>
+				<div id=center>
+					<ul>						
+						<li><button type="button" id="btn7" value=7 onclick="myBtnClick(this.value)">7</button></li>
+						<li><button type="button" id="btn8" value=8 onclick="myBtnClick(this.value)">8</button></li>
+						<li><button type="button" id="btn9" value=9 onclick="myBtnClick(this.value)">9</button></li>
+						<li><button type="button" id="btn4" value=4 onclick="myBtnClick(this.value)">4</button></li>
+						<li><button type="button" id="btn5" value=5 onclick="myBtnClick(this.value)">5</button></li>
+						<li><button type="button" id="btn6" value=6 onclick="myBtnClick(this.value)">6</button></li>
+						<li><button type="button" id="btn1" value=1 onclick="myBtnClick(this.value)">1</button></li>
+						<li><button type="button" id="btn2" value=2 onclick="myBtnClick(this.value)">2</button></li>
+						<li><button type="button" id="btn3" value=3 onclick="myBtnClick(this.value)">3</button></li>
+						<li><button type="button" id="btn0" value=0 onclick="myBtnClick(this.value)">0</button></li>
+						<li><button type="button" id="startBtn" onclick="startBtnClick()"></button></li>
+					</ul>
+				</div>
+				<div id='footer'>
+					<p id='history'></p>
+				</div>
+
+
+  			</div><!--wrap-->
+			
+
+			<script src="baseballgame.js" charset="UTF-8"></script>
+		</body>
+</html>

@@ -1,0 +1,56 @@
+body {
+  background-color: #263238;
+}
+
+h1 {
+  color: white;
+  font-size: 51px;
+}
+
+.nonColorNormal {
+  background-color: #EEEEEE;
+  text-align: center;
+  font-size: 50;
+  width: 80px;
+  height: 80px;
+}
+
+.nonColorDouble {
+  background-color: #EEEEEE;
+  text-align: center;
+  font-size: 50;
+  width: 165px;
+  height: 80px;
+}
+
+.colorNormal {
+  background-color: #FFA000;
+  text-align: center;
+  font-size: 50;
+  width: 80px;
+  height: 80px;
+}
+
+.colorDouble {
+  background-color: #FFA000;
+  text-align: center;
+  font-size: 50;
+  width: 165px;
+  height: 80px;
+}
+
+#totalResult {
+  background-color: gray;
+  font-size: 50px;
+  width: 330px;
+  height: 60px;
+  text-align: center;
+}
+
+#buttonresult {
+  background-color: gray;
+  font-size: 30;
+  width: 330px;
+  height: 30px;
+  text-align: center;
+}
