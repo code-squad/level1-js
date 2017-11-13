@@ -1,0 +1,60 @@
+
+.ground{
+    width: 26%;
+    padding: 6px 6px 0 0;
+    float: left;
+    margin: 0 auto;
+    display: table;
+    text-align: center;
+    background-color: gray;
+    border-radius: 2px;
+
+}
+
+.piece-wrap{
+    width: 100%;
+    height: calc(100%/3);
+    float: left;
+}
+
+.piece{
+    width: 100px;
+    height: 100px;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    background-color: #323939;
+    color: #f4f4f7;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 100px;
+    border-radius: 2px;
+    animation-duration: 3s;
+    animation-name: slidein;
+    float: left;
+}
+
+.re-btn{
+    margin-top: 15px;
+    border-style: none;
+    background-color: #323939;
+    color: white;
+    width: 70px;
+    border-radius: 2px;
+    outline: none;
+    height: 22px;
+    float: right;
+}
+
+.re-btn:hover{
+    box-shadow: 0 0 10px #b2752f;
+    outline: none;
+}
+
+.re-btn-wrap{
+    width:330px;
+}
+
+
+
