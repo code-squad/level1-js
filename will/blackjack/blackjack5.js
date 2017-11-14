@@ -10,6 +10,7 @@ var ctx = canvas.getContext("2d");
 ctx.strokeStyle = "#0da2d8";
 ctx.lineWidth = 7;
 ctx.strokeRect(0, 0, 550, 350);
+var temp2;
 
 var dealer = {
   name : "dealer",
@@ -23,7 +24,8 @@ var player = {
   cards : [],
   cardsValue : [],
   scoreSum : 0,
-  result : ""
+  result : "",
+  money : 1000
 }
 
 player.hit = function(shuffledCards) {
@@ -43,6 +45,8 @@ player.hit = function(shuffledCards) {
     message.innerHTML = "player burst. player lose";
     btnHit.disabled = "disabled";
     btnStand.disabled = "disabled";
+    this.money -= 100;
+    totalMoney.innerHTML = this.money;
     for (i = 0; i < dealer.cards.length; i++ ){
          renderCard(dealer, i);
     }
@@ -63,9 +67,16 @@ player.stand = function(shuffledCards) {
     if (this.scoreSum > dealer.scoreSum) {
       dealerScore.innerHTML = dealer.scoreSum;
       message.innerHTML = "player win";
+      this.money += 100;
+      totalMoney.innerHTML = this.money;
     } else if (this.scoreSum < dealer.scoreSum) {
       dealerScore.innerHTML = dealer.scoreSum;
       message.innerHTML = "player lose";
+      this.money -= 100;
+      totalMoney.innerHTML = this.money;
+    } else if (this.scoreSum === 21 && dealer.scoreSum === 21){
+      dealerScore.innerHTML = dealer.scoreSum;
+      message.innerHTML = "dealer blackjack, player lose";
     } else {
       dealerScore.innerHTML = dealer.scoreSum;
       message.innerHTML = "draw";
@@ -90,6 +101,8 @@ dealer.hit = function(shuffledCards) {
     message.innerHTML = "dealer burst. player win";
     btnHit.disabled = "disabled";
     btnStand.disabled = "disabled";
+    player.money += 100;
+    totalMoney.innerHTML = player.money;
     return "win";
   }
 }
@@ -122,9 +135,15 @@ function shuffleCards(cardsArr) {
 
 function giveCard(cardsArr, target) {
   target.cards.push(cardsArr.pop());
-
-  for (i = 0; i < target.cards.length; i++ ){
-       renderCard(target, i);
+  if (temp2 <= 0) {
+    temp2++;
+  } else if(temp2 <= 1) {
+    renderCard(target, 1);
+    temp2++;
+  } else {
+    for (i = 0; i < target.cards.length; i++){
+         renderCard(target, i);
+    }
   }
 }
 
@@ -189,6 +208,7 @@ var cards = makeCards();
 var shuffledCards = shuffleCards(cards);
 
 function start() {
+  temp2 = 0;
   btnHit.disabled = false;
   btnStand.disabled = false;
   giveCard(shuffledCards, dealer);
@@ -208,7 +228,8 @@ function start() {
   dealerScore.innerHTML = "?";
   playerScore.innerHTML = player.scoreSum;
   message.innerHTML = "hit or stand?";
-  setTimeout(function() { drawBack();}, 10);
+  totalMoney.innerHTML = player.money;
+  drawBack();
 }
 
 function newGame() {
@@ -225,6 +246,13 @@ function newGame() {
   player.result = "";
   cards = makeCards();
   shuffledCards = shuffleCards(cards);
+  if(player.money === 0) {
+    btnHit.disabled = "disabled";
+    btnStand.disabled = "disabled";
+    btnNewGame.disabled = "disabled";
+    message.innerHTML = "game over";
+    return;
+  }
 
   start();
 }

@@ -1,0 +1,23 @@
+body {
+  background-color: #2979FF;
+}
+
+#puzzle {
+  width: 344px;
+  height: 344px;
+  border: solid #222;
+  border-width: 5px;
+}
+
+span {
+  color: black;
+  background-color: orange;
+  display: inline-block;
+  font-size: 80px;
+  text-align: center;
+  height: 80px;
+  width: 80px;
+  border: solid #222;
+  border-width: 3px;
+  border-radius: 10px;
+}
