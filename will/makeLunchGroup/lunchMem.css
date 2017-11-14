@@ -32,7 +32,7 @@ button {
     height: 50px;
 }
 
-#bar1 {
+div {
   background-color: #2c2f35;
   text-align: center;
   border: none;
@@ -43,12 +43,4 @@ button {
   font-size: 20px;
   width: 600px;
   height: 10px;
-}
-
-#btnStart {
-  background-color: #bc403c; // red
-  border: none;
-  display: inline-block;
-  text-align: center;
-  color: white;
 }
