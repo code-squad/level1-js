@@ -1,0 +1,165 @@
+#background {
+  background-color: #2979FF;
+  width: 800px;
+  height: 640px;
+}
+
+#inGame {
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -20px;
+  width: 700px;
+  height: 540px;
+}
+
+#gameName {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+#enemyMonStatus {
+  color: black;
+  background-color: #FFF9C4;
+  display: inline-block;
+  font-size: 10px;
+  text-align: center;
+  height: 100px;
+  width: 280px;
+  border: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  position: absolute;
+  top: 170px;
+  left: 100px;
+}
+
+#myMonStatus {
+  color: black;
+  background-color: #FFF9C4;
+  display: inline-block;
+  font-size: 10px;
+  text-align: center;
+  height: 100px;
+  width: 280px;
+  border: solid;
+  border-width: 3px;
+  border-radius: 10px;
+  position: absolute;
+  top: 420px;
+  left: 430px;
+}
+
+#enemyZone {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  top: 140px;
+  left: 410px;
+}
+
+#myZone {
+  width: 350px;
+  height: 200px;
+  position: absolute;
+  top: 350px;
+  left: 50px;
+}
+
+#dock {
+  color: black;
+  background-color: #EEEEEE;
+  display: inline-block;
+  font-size: 30px;
+  text-align: center;
+  height: 130px;
+  width: 434px;
+  border: solid;
+  border-width: 3px;
+  position: fixed;
+  top: 550px;
+}
+
+#enemyHpZone {
+  background: white;
+  width: 200px;
+  height: 10px;
+  position: absolute;
+  top: 70px;
+  left: 40px;
+  border: solid #222;
+  border-width: 2px;
+  border-radius: 6px;
+}
+
+#hpZone {
+    background: white;
+    width: 200px;
+    height: 10px;
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    border: solid #222;
+    border-width: 2px;
+    border-radius: 6px;
+}
+
+#selectDock {
+  color: black;
+  background-color: #EEEEEE;
+  display: inline-block;
+  font-size: 28px;
+  text-align: center;
+  height: 130px;
+  width: 260px;
+  border: solid;
+  border-width: 3px;
+  position: fixed;
+  top: 550px;
+  left: 492px;
+}
+
+#enemyName {
+  font-size: 20px;
+}
+#enemyHP {
+  font-size: 15px;
+}
+#enemyPower {
+  font-size: 15px;
+}
+
+#myName {
+  font-size: 20px;
+}
+#myHP {
+  font-size: 15px;
+}
+#myPower {
+  font-size: 15px;
+}
+
+#attack {
+  font-size: 30px;
+  height: 65px;
+  width: 126px;
+}
+
+#rest {
+  font-size: 30px;
+  height: 65px;
+  width: 126px;
+}
+
+#changePkm {
+  font-size: 25px;
+  height: 65px;
+  width: 126px;
+}
+
+#ranAway {
+  font-size: 22px;
+  height: 62px;
+  width: 126px;
+}

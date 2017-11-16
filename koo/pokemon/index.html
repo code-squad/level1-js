@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="pokemon.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  </head>
+
+  <body>
+
+    <h1>POKEMON</h1>
+    <div id="background">
+      <h1 id="gameName">POKEMON</h1>
+
+      <div id="inGame">
+        <p id="enemy">
+          <span id="enemyMonStatus">
+            <span id="enemyName"></span><br>
+            <span id="enemyHP"></span><br>
+            <span id="enemyPower"></span><br>
+            <canvas id="enemyHpZone"></canvas>
+          </span>
+          <canvas id="enemyZone"></canvas>
+        </p>
+        <p id="me">
+          <canvas id="myZone"></canvas>
+          <span id="myMonStatus">
+            <span id="myName"></span><br>
+            <span id="myHP"></span><br>
+            <span id="myPower"></span><br>
+            <canvas id="hpZone"></canvas>
+          </span>
+        </p>
+        <div id="dock">
+          <span id="message"></span>
+          <div id="selectDock">
+            <button id="attack" onclick="attackEnemy(myPokemon, myPokeNum,
+                                          enemyPokemon, pokeNum)">ATTACK</button>
+            <button id="rest" onclick="takeRest(myPokemon, myPokeNum,
+                                          enemyPokemon, pokeNum)">REST</button><br>
+            <button id="changePkm">CHANGE</button>
+            <button id="ranAway" onclick="theEnd()">RUN AWAY</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="pokemon.js"></script>
+
+  </body>
+</html>
