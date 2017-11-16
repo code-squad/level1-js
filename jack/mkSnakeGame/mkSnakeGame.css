@@ -1,0 +1,27 @@
+h1 {
+  color : orange;
+}
+canvas {
+  background-color: lightyellow;
+}
+#score {
+  background-color: lightblue;
+  width : 400px;
+  font-size : 30px;
+  text-align : center;
+  border-color : black;
+}
+#sentence {
+  background-color: lightblue;
+  text-align : center;
+  width :400px;
+  border-color : green;
+  color : blue;
+}
+button {
+  background-color : lightgreen;
+  width : 400px;
+  height : 45px;
+  font-size: 35px;
+  /*border-color : green;*/
+}
