@@ -35,7 +35,7 @@ function makePokemon(name, totalHp, hp, power, src) {
     }
   };
 }
-
+//attackAlert0 ~ 3 is function that alert attack effect message.
 function attackAlert3() {
   document.getElementById("message").innerHTML = "효과는 굉장했다!!";
 }
@@ -65,13 +65,14 @@ function generateArray(enemy, enemyPkm, myPkm) {
   var mon6 = new makePokemon("피카츄", 300, 300, 100, "pikachu.gif");
   var mon7 = new makePokemon("우츠보트", 500, 500, 150, "uchboat.gif");
   var mon8 = new makePokemon("잠만보", 1000, 1000, 100, "zambo.png");
-  var mon9 = new makePokemon("[보스]", 1500, 1500, 400, "gara.png");
+  var mon9 = new makePokemon("갸라도스", 1500, 1500, 400, "gara.png");
+  var mon10 = new makePokemon("[보스]호눅스", 3000, 3000, 1200, "honux.png");
 
   var myMon0 = new makePokemon("피카츄", 300, 300, 120, "pikachuBack.png");
   var myMon1 = new makePokemon("파이리", 100, 100, 100, "charmanderBack.png");
   var myMon2 = new makePokemon("꼬부기", 300, 300, 100, "squirtleBack.png");
   var myMon3 = new makePokemon("이상해씨", 300, 300, 100, "bulbasaurBack.png");
-  var myMon4 = new makePokemon("짱짱보스", 3000, 3000, 2000, "boss.png");
+  var myMon4 = new makePokemon("망나뇽", 3000, 3000, 2000, "boss.png");
 
   enemyPkm[0] = mon0;
   enemyPkm[1] = mon1;
@@ -83,6 +84,7 @@ function generateArray(enemy, enemyPkm, myPkm) {
   enemyPkm[7] = mon7;
   enemyPkm[8] = mon8;
   enemyPkm[9] = mon9;
+  enemyPkm[10] = mon10;
 
   myPkm[0] = myMon0;
   myPkm[1] = myMon1;
@@ -109,6 +111,7 @@ function drawEnemyStatus(arr, num) {
   document.getElementById("enemyPower").innerHTML = "POWER : " + arr[num].power;
 }
 
+//draw my status
 function drawMyStatus(arr, num) {
   document.getElementById("myName").innerHTML = arr[num].name;
   document.getElementById("myHP").innerHTML = "HP : " + arr[num].hp;
@@ -128,7 +131,10 @@ function drawEnemy(arr, pos, monNum) {
   enemyImage.onload = function () {
     drawE.drawImage(enemyImage, pos[1], -10);
   };
-  for (var i = monNum; i < 10; i++) {
+  if (monNum === 11) {
+    console.log("a");
+  }
+  for (var i = monNum; i < 11; i++) {
     if (arr[i].hp > 0) {
       enemyImage.src = arr[i].src;
       drawEnemyStatus(arr, i);
@@ -138,6 +144,7 @@ function drawEnemy(arr, pos, monNum) {
       return -1;
     }
   }
+  return 11;  //if all enemy monsters are died, return 11
 }
 
 //draw my pokemon. no return. just draw.
@@ -151,6 +158,9 @@ function drawMe(arr, pos, monNum) {
   pkm2Image.onload = function () {
     drawM.drawImage(pkm2Image, pos[0], 10);
   };
+  if (monNum === 11) {
+    return 11;
+  }
   for (var i = monNum; i < 5; i++) {
     if (arr[i].hp > 0) {
       pkm2Image.src = arr[i].src;
@@ -161,6 +171,23 @@ function drawMe(arr, pos, monNum) {
       return -1;
     }
   }
+}
+
+//if you click 'runAway' button, my pokemon will be run!
+function clearMe(arr, pos, monNum) {
+  drawM.clearRect(0, 0, 350, 200);
+  var pkm2Image = new Image();
+  pkm2Image.onload = function () {
+    drawM.drawImage(pkm2Image, pos[0], 10);
+  };
+  pkm2Image.src = arr[monNum].src;
+
+  if (pos[0] > 350) {
+    drawM.clearRect(0, 0, 350, 200);
+    console.log("stop");
+    return 0;
+  }
+  return -1;
 }
 
 //draw enemy pokemon HP
@@ -198,6 +225,18 @@ function isCome() {
   if (isDie2 === -1) {
     pokeNum[0] += 1;
     xPos[1] = 140;
+  }else if (isDie2 === 11) {
+    victory();
+  }
+}
+
+//if you click "ranAway" button, go clearMe function to clear my character.
+function isRunAway() {
+  var isRun = clearMe(myPokemon, xPos, myPokeNum[0]);
+  if (isRun === -1) {
+    xPos[0] += 10;
+  }else if (isRun === 0) {
+    return false;
   }
 }
 
@@ -208,7 +247,7 @@ function attackEnemy(myArr, myNum, enemyArr, enemyNum) {
     enemyArr[enemyNum].hp = 0;
     setTimeout(function() {
       document.getElementById("message").innerHTML =
-              enemyArr[enemyNum - 1].name + ".. 죽였다!";
+              enemyArr[enemyNum - 1].name + "(을)를.. 이겼다!";
     }, 1000);
     return 0;
   }
@@ -241,11 +280,51 @@ function takeRest(myPokemon, myPokeNum, enemyArr, enemyNum) {
   }
 }
 
+//if user click "changePkm" button, update message penel.
+function changePkm() {
+  setTimeout(function() {
+    document.getElementById("message").innerHTML =
+                    "사나이는 질 것 같다고 포켓몬을 바꾸지 않는다.";
+  }, 500);
+  setTimeout(function() {
+    document.getElementById("message").innerHTML =
+                    "그냥 싸워라.";
+  }, 2000);
+}
+
+//OFF BGM
+function turnOff() {
+  document.getElementById("music").src = "";
+}
+
 //when you click RUNAWAY button, game will be over. you lose.
 function theEnd() {
   clearInterval(y);
   clearInterval(x);
-  alert("GAME OVER");
+  document.getElementById("attack").disabled = true;
+  document.getElementById("rest").disabled = true;
+  document.getElementById("changePkm").disabled = true;
+  document.getElementById("ranAway").disabled = true;
+  var z = setInterval(isRunAway, 50);
+
+  setTimeout(function() {clearInterval(z);}, 2000);
+  setTimeout(function() {turnOff();}, 2000);
+  document.getElementById("message").innerHTML = "도망치자.. 다음엔 이기고 말겠어..";
+  setTimeout(function() {
+    document.getElementById("message").innerHTML = "You Lose";}, 2000);
+}
+
+//if user victory, update message penel and all buttons are disabled.
+function victory() {
+  clearInterval(y);
+  clearInterval(x);
+  document.getElementById("attack").disabled = true;
+  document.getElementById("rest").disabled = true;
+  document.getElementById("changePkm").disabled = true;
+  document.getElementById("ranAway").disabled = true;
+  setTimeout(function() {
+    document.getElementById("message").innerHTML =
+                          "챔피언이 되었다.";}, 2000);
 }
 //-------------------MAIN START--------------------
 var trainer = [];
@@ -260,12 +339,18 @@ var xPos = [-30, 140];
 var pokeNum = [0];
 var myPokeNum = [0];
 
+//start message
 document.getElementById("message").innerHTML = "결투를 시작하자.";
 
+//draw my / enemy HP
 function drawHP() {
   drawEnemyHp(enemyPokemon, pokeNum[0]);
   drawMyHp(myPokemon, myPokeNum[0]);
 }
 
+//x is function that draw my character and enemy character.
+//also print pokemon status(name, hp, power)
 var x = setInterval(isCome, 200);
+
+//y is function that draw my hp bar and enemy hp bar. (color: red)
 var y = setInterval(drawHP, 100);

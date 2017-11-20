@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
-
     <meta charset="utf-8">
     <link rel="stylesheet" href="pokemon.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <audio id="music" autoplay="autoplay" autobuffer="" loop="true" preload="auto""><source src="bgm.mp3" /></audio>
   </head>
 
   <body>
@@ -40,7 +39,7 @@
                                           enemyPokemon, pokeNum)">ATTACK</button>
             <button id="rest" onclick="takeRest(myPokemon, myPokeNum,
                                           enemyPokemon, pokeNum)">REST</button><br>
-            <button id="changePkm">CHANGE</button>
+            <button id="changePkm" onclick="changePkm()">CHANGE</button>
             <button id="ranAway" onclick="theEnd()">RUN AWAY</button>
           </div>
         </div>
