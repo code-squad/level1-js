@@ -1,3 +1,10 @@
 *{margin: 0 auto; padding: 0;}
 
-span{display: inline-block; width: 50px; height: 50px; text-align: center; line-height: 50px; border: 1px solid #000;}
+body{background-color: #F0E5DE; margin: 0 auto;}
+#wrap{width: 290px; height: 470px; margin: 0 auto; padding-top: 50px;}
+
+h1{font-size: 30px; margin: 30px; text-align: center; color: #534847;}
+#puzzle{display: inline-block; width: 288px; height: 288px; border: 1px solid #7C7877}
+span{display: inline-block; width: 70px; height: 70px;text-align: center; line-height: 70px; border: 1px solid #7C7877}
+#footer{width: 290px;border:}
+#btn{width: 290px; height: 60px; margin: 0 auto; font-size: 17px; color: #534847;  background-color: #D9D4CF; border: 2px solid #7C7877; border-top: 0 solid #7C7877;}
