@@ -1,0 +1,27 @@
+*{margin: 0 auto; padding: 0;}
+
+body{margin: 0 auto;background-image: url(img/bg2.jpg); background-size: 1300px 700px}
+#wrap{width: 366px; height: 470px; margin: 0 auto; padding-top: 50px;}
+
+ul{position: relative; width: 360px; height: 80px; }
+ul>li{float: left; width: 130px; text-align: center; }
+ul>li:nth-child(1){width: 100px; height: 50px; background-image: url(img/codesquad.png); background-size: 50px 50px; background-repeat: no-repeat; background-position: center;}
+ul>li:nth-child(2){width: 160px; height: 30px; font-size: 25px; font: bold; line-height: 30px; color: #4ea1d3; font-family: Courier;}
+ul>li:nth-child(3){width: 100px; height: 30px; font-size: 25px; font: bold; line-height: 30px; color: #4ea1d3; font-family: Courier;}
+
+ul>li:nth-child(4){position:absolute; top: 55px; left: 0;  width: 100px; height: 20px; color: #4ea1d3; font-size: 17px; font: bold; font-family: monospace;}
+ul>li:nth-child(5){width: 160px; height: 40px; font-size: 25px; font: bold; line-height: 40px; color: #4ea1d3; font-family: Comic Sans MS;}
+ul>li:nth-child(6){width: 100px; height: 40px; font-size: 25px; font: bold; line-height: 40px; color: #4ea1d3; font-family: Comic Sans MS;}
+
+
+
+#pang{display: inline-block; width: 353px; height: 353px; margin: 0 auto; border: 3px dashed #60c5ba; }
+
+/* color: transparent; */
+span{position: relative; display: inline-block; width: 50px; color: transparent;height: 50px; text-align: center; line-height: 50px;}
+
+img{position: absolute; left: 3px; top: 3px; z-index: -1}
+
+#footer{position: relative; width: 290px; margin-top: 15px;}
+#startbtn{ width: 100px; height: 50px; margin: 0 auto; margin-left: 60px; font-size: 15px; font: bold; font-family: Comic Sans MS; color: #ef5285;  background-color: #60c5ba; }
+#resetbtn{position: absolute; top: 0; left: 200px;width: 100px; height: 50px; margin: 0 auto; font-size: 15px; font: bold; font-family: Comic Sans MS; color: #ef5285;  background-color: #60c5ba;  }
