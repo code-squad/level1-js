@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Tic Tac Toe!!</title>
+
+	<link rel="stylesheet" href="tictactoe.css">
+
+</head>
+
+<body>
+	<div id="wrap">
+		<div id="header">
+			<div style="text-align: center;">
+			<font size="25" face="Comic Sans MS" color="#421451">Tic Tac Toe! :D</font>
+		    </div>
+		</div>
+		<div id="center">
+			<center><table class="fixed" bgcolor="#0e4934">
+			  <tr>
+				 <td class="cell" id="0"></td>
+				 <td class="cell" id="1"></td>
+				 <td class="cell" id="2"></td>
+			  </tr>
+		      <tr>
+				<td class="cell" id="3"></td>
+				<td class="cell" id="4"></td>
+				<td class="cell" id="5"></td>
+			  </tr>
+			  <tr>
+			  	<td class="cell" id="6"></td>
+			  	<td class="cell" id="7"></td>
+			  	<td class="cell" id="8"></td>
+			  </tr>
+		 	</table></center>			
+		</div>
+		<div id=footer>
+			<div class="endgame">
+		 		<div class="text"></div>
+		 	</div>
+		 	<center><button onClick="startGame()">Replay</button></center>
+		</div>	
+	</div>
+	<script src="tictactoe.js"></script>
+</body>
+</html>
+
+
