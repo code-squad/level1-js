@@ -4,9 +4,6 @@ var score = 0;
 var running = false;
 var move = false;
 var count = 0;
-var pangX = 0;
-var pangY = 0;
-
 
 
 //배열을 만드는 함수
@@ -20,7 +17,6 @@ function generateArr(arr){
 	}
 }
 generateArr(characterArr);
-
 
 
 //updateHtml
@@ -87,9 +83,7 @@ function updateHtml(arr){
 updateHtml(characterArr);
 
 
-
 document.getElementById("pang").addEventListener("click", clickCharacter);
-
 
 
 //click character 
@@ -98,16 +92,11 @@ function clickCharacter(event){
 	if(running) {
 		changePang(characterArr);
 		check(characterArr);
-
 		updateHtml(characterArr);
 	} else {
 		return;
 	}
-		
-
-
 }
-
 
 
 //store first click
@@ -154,7 +143,6 @@ function changePang(arr){
 		//ableToChange(arr, key.x, key.y, pos.x, pos.y);
 	
 
-
 		if(key.x == pos.x && Math.abs(key.y - pos.y) === 1) {
 				move = true;
 		}
@@ -178,81 +166,80 @@ function ableToChange(arr, keyx, keyy, posx, posy){
 	console.log("ableTo arr[keyx][keyy] = " + arr[keyx][keyy]);
 	console.log("ableTo arr[posx][posy - 1] = " + arr[posx][posy - 1]);
 	console.log("ableTo arr[posx][posy - 2] = " + arr[posx][posy - 2]);
-	console.log("ableTo arr[keyx][keyy] == arr[keyx][keyx - 1]" + arr[keyx][keyy] == arr[keyx][keyx - 2]);	
-	console.log("ableTo arr[keyx][keyy] == arr[posx][posy - 1]" + arr[keyx][keyy] == arr[posx][posy - 1] == arr[posx][posy - 2]);	
+	console.log("ableTo arr[keyx][keyy] == arr[keyx][keyx - 1] " + (arr[keyx][keyy] == arr[posx][posy - 1]));	
+	
 
 	//left 
-	if(arr[keyx][keyy] == arr[posx][posy - 1] == arr[posx][posy - 2]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy - 1] && arr[keyx][keyy] == arr[posx][posy - 2]) {
+		console.log("left left 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx - 1][posy] == arr[posx - 2][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx - 1][posy] && arr[keyx][keyy] == arr[posx - 2][posy]) {
+		console.log("left up 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx + 1][posy] == arr[posx + 2][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx + 1][posy] && arr[keyx][keyy] == arr[posx + 2][posy]) {
+		console.log("left down 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx - 1][posy] == arr[posx + 1][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx - 1][posy] && arr[keyx][keyy] == arr[posx + 1][posy]) {
+		console.log("left between 바꿀수있음");
 		move = true;
 	}	
 
 	//right
-	if(arr[keyx][keyy] == arr[posx][posy + 1] == arr[posx][posy + 2]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy + 1] && arr[keyx][keyy] == arr[posx][posy + 2]) {
+		console.log("right right 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx - 1][posy] == arr[posx - 2][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx - 1][posy] && arr[keyx][keyy] == arr[posx - 2][posy]) {
+		console.log("right up 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx + 1][posy] == arr[posx + 2][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx + 1][posy] && arr[keyx][keyy] == arr[posx + 2][posy]) {
+		console.log("right down 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx - 1][posy] == arr[posx + 1][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx - 1][posy] && arr[keyx][keyy] == arr[posx + 1][posy]) {
+		console.log("right between 바꿀수있음");
 		move = true;
 	}	
 
 	//up
-	if(arr[keyx][keyy] == arr[posx][posy + 1] == arr[posx][posy + 2]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy + 1] && arr[keyx][keyy] == arr[posx][posy + 2]) {
+		console.log("up right 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx - 1][posy] == arr[posx - 2][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx - 1][posy] && arr[keyx][keyy] == arr[posx - 2][posy]) {
+		console.log("up up 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx][posy - 1] == arr[posx][posy - 2]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy - 1] && arr[keyx][keyy] == arr[posx][posy - 2]) {
+		console.log("up left 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx][posy - 1] == arr[posx][posy + 1]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy - 1] && arr[keyx][keyy] == arr[posx][posy + 1]) {
+		console.log("up between 바꿀수있음");
 		move = true;
 	}	
 
 	//down
-	if(arr[keyx][keyy] == arr[posx][posy + 1] == arr[posx][posy + 2]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy + 1] && arr[keyx][keyy] == arr[posx][posy + 2]) {
+		console.log("down right바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx + 1][posy] == arr[posx + 2][posy]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx + 1][posy] && arr[keyx][keyy] == arr[posx + 2][posy]) {
+		console.log("down down바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx][posy - 1] == arr[posx][posy - 2]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy - 1] && arr[keyx][keyy] == arr[posx][posy - 2]) {
+		console.log("down left 바꿀수있음");
 		move = true;
 	}
-	if(arr[keyx][keyy] == arr[posx][posy - 1] == arr[posx][posy + 1]) {
-		console.log("바꿀수있음");
+	if(arr[keyx][keyy] == arr[posx][posy - 1] && arr[keyx][keyy] == arr[posx][posy + 1]) {
+		console.log("down between 바꿀수있음");
 		move = true;
 	}	
-
 }
 
 
@@ -311,7 +298,7 @@ function countCol(arr, i, j){
 function check(arr){
 	for(var i = 0; i < 7; i++){
 		for(var j = 0; j < 5; j++){
-			pangX = countRow(arr, i, j);
+			var pangX = countRow(arr, i, j);
 			if (pangX >= 3) {
 				console.log("줄 지워!", i, j, pangX);	
 				eraseRow(arr, i, j, pangX);
@@ -323,7 +310,7 @@ function check(arr){
 
 	for(var j = 0; j < 7; j++){
 		for(var i = 0; i < 5; i++){
-			pangY = countCol(arr, i, j);
+			var pangY = countCol(arr, i, j);
 			if (pangY >= 3) {
 				console.log("열 지워!", i, j, pangY);			
 				eraseCol(arr, i, j, pangY);
@@ -331,8 +318,7 @@ function check(arr){
 				document.getElementById("score").innerHTML = score;
 			} 
 		}
-	}		
-	
+	}			
 }
 
 
@@ -377,8 +363,6 @@ function eraseCol(arr, x, y, n){
 		}
 	}
 }
-
-
 
 
 /*     스킬      */
