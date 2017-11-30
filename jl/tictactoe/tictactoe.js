@@ -1,8 +1,8 @@
 var ticArr = [];
 var running = true;
 
-// generate an array for the game table 
-function table(arr) { 
+// generate an array for the game table
+function table(arr) {
 	for (var i = 0; i < 3; i++) {
 		ticArr[i] = [];
 		for(var j = 0; j < 3; j++){
@@ -13,7 +13,7 @@ function table(arr) {
 
 table(ticArr);
 
-// get the game table shown on the page  
+// get the game table shown on the page
 function showTable(arr) {
 	for (var i = 0; i < 3; i++) {
 		for (var j = 0; j < 3; j++) {
@@ -33,9 +33,8 @@ var count = 0;
 function ticClick(event) {
 
 	if(running){
-		var id = event.target.id;
-		var idArr = id.split("").map(Number);
-		idArr.shift();
+		var id = event.target.id.slice(1,3);
+		var idArr = id.split('').map(Number);
 
 		count++;
 		if(count == 1){
@@ -44,7 +43,7 @@ function ticClick(event) {
 			oxChange(ticArr, p1.x, p1.y);
 			winCombo(ticArr, "O");
 			document.getElementById("n"+p1.x+p1.y).disabled = true;
-		} 
+		}
 		if(count == 2){
 			p2.x = idArr[0];
 			p2.y = idArr[1];
@@ -53,10 +52,10 @@ function ticClick(event) {
 			winCombo(ticArr, "X");
 			document.getElementById("n"+p2.x+p2.y).disabled = true;
 		}
-		showTable(ticArr);		
+		showTable(ticArr);
 	} else {
 		return;
-	}	
+	}
 }
 
 // change the coordinate values to "O"s and "X"s
@@ -66,63 +65,71 @@ function oxChange(arr, x1, y1){
 	}
 	if(count == 2){
 		arr[x1][y1] = "X";
-	}	
+	}
 }
 
-// win conditions 
+function win(str) {
+	alert(str + " has won!!");
+	running = false;
+}
+
+function checkRow(arr, i, str) {
+	for (var j = 0; j < 3; j++) {
+		if (arr[i][j] != str) {
+			return;
+		}
+	}
+	win(str);
+}
+
+function checkCol(arr, j, str) {
+	for (var i = 0; i < 3; i++) {
+		if (arr[i][j] != str) {
+			return;
+		}
+	}
+	win(str);
+}
+
+function checkLeftDiagonal(arr, str) {
+	for (var i = 0; i < 3; i++) {
+			if (arr[i][i] != str) {
+				return;
+			}
+	}
+	win(str);
+}
+
+function checkRightDiagonal(arr, str) {
+	for (var i = 0; i < 3; i++) {
+			if (arr[i][2 - i] != str) {
+				return;
+			}
+	}
+	win(str);
+}
+// win conditions
 function winCombo(arr, str){
-
-	// check rows
-	if(arr[0][0] == str && arr[0][1] == str && arr[0][2] == str){
-		alert(str + " has won!!");
-	 	running = false;
+	for (var i = 0; i < 3; i++) {
+		checkRow(arr, i, str);
 	}
-	if(arr[1][0] == str && arr[1][1] == str && arr[1][2] == str){
-		alert(str + " has won!!");
-	 	running = false;	
+	for (var j = 0; j < 3; j++) {
+		checkCol(arr,j , str);
 	}
-	if(arr[2][0] == str && arr[2][1] == str && arr[2][2] == str){
-		alert(str + " has won!!");
-	 	running = false;
-	}
-
-	// check columns 
-	if(arr[0][0] == str && arr[1][0] == str && arr[2][0] == str){
-		alert(str + " has won!!");
-	 	running = false;
-	}
-	if(arr[0][1] == str && arr[1][1] == str && arr[2][1] == str){
-		alert(str + " has won!!");
-	 	running = false;
-	}
-	if(arr[0][2] == str && arr[1][2] == str && arr[2][2] == str){
-		alert(str + " has won!!");
-	 	running = false;
-	}
-
-	// check left diagonal
-	if(arr[0][0] == str && arr[1][1] == str && arr[2][2] == str){
-		alert(str + " has won!!");
-	 	running = false;
-	}
-	
-	// check right diagonal 
-	if(arr[0][2] == str && arr[1][1] == str && arr[2][0] == str){
-		alert(str + " has won!!");
-	 	running = false;
-	}
-
+	checkLeftDiagonal(arr, str);
+	checkRightDiagonal(arr, str);
 }
 
-// replay the game 
+// replay the game
 function replay() {
 	running = true;
+	count = 0;
 	table(ticArr);
 	showTable(ticArr);
 	btnWork();
 }
 
-// get the replay button clicked when a game is done 
+// get the replay button clicked when a game is done
 function btnWork(){
 	for(var i = 0; i < 3; i++){
 		for(var j = 0; j < 3; j++){
@@ -130,4 +137,3 @@ function btnWork(){
 		}
 	}
 }
-
