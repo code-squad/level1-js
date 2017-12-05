@@ -4,11 +4,8 @@ body {
 
 h1 {
     color: white;
+    font-family: verdana;
     text-align: center;
-}
-
-#main {
-  background-color: gray;
 }
 
 p {
