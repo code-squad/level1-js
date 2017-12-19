@@ -1,13 +1,32 @@
 var canvas = document.getElementById("canvas");
 var ctx = canvas.getContext("2d");
-ctx.fillRect(0,0, 640, 480);
-ctx.fillStyle="Red";
 
 function randomColor() {
 	var r = Math.floor(Math.random() * 256);
 	var g = Math.floor(Math.random() * 256);
 	var b = Math.floor(Math.random() * 256);
 	return "rgb(" + r + "," +  g  +"," + b + ")";
+}
+
+var colors = [];
+function() {
+	for(var i = 0; i < 10; i++) {
+		colors.push([]);
+	}
+}();
+
+function fill() {
+	for (var i = 0; i < 10; i++) {
+		for (var j = 0; j <10; j++) {
+			colors[i][j] = randomColor();
+		}
+	}
+}
+
+function
+
+function blur() {
+
 }
 
 function draw() {

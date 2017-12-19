@@ -1,13 +1,12 @@
 var fs = require('fs');
 
-var foo = function(err, data) {
+fs.readFile('hello.txt', 'utf8', function(err, data) {
 	if (err) {
-		console.error("error 발생");
-		console.error(err);
+		console.log("에러");
+		console.log(err);
 	} else {
 		console.log(data);
 	}
-}
-		
-fs.readFile('test.txt', 'utf8', foo);
-console.log("hahaha");
+});
+
+console.log("program ended");
