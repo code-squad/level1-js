@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,YAAY;EACV,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,IAAI",
+"sources": ["../../src/sass/components/_board.sass"],
+"names": [],
+"file": "main.css"
+}
