@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    h1 {
+        font-family: "Comic Sans MS"
+    }
+
+    #error {
+        color: "Red";
+    }
+    .btn {
+        font-family: "Papyrus";
+        width: 100px;
+        height: 100px;
+        font-size: 50px;
+    }
+    </style>
+
+</head>
+<body>
+    <h1>Tic Tac Toe!</h1>
+    <div id="board">
+        <button id="00" class="btn"> </button>
+        <button id="01" class="btn"> </button>
+        <button id="02" class="btn"> </button>
+        <br>
+        <button id="10" class="btn"> </button>
+        <button id="11" class="btn"> </button>
+        <button id="12" class="btn"> </button>
+        <br>
+        <button id="20" class="btn"> </button>
+        <button id="21" class="btn"> </button>
+        <button id="22" class="btn"> </button>
+    </div>
+    <div>
+        <p id="display"></p>
+        <p id="error"></p>
+
+        <button id="reset">리셋</button>
+    </div>
+
+    <script src="game.js"></script>
+</body>
+</html>
