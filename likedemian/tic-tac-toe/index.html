@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tic Tac Toe</title>
+  <link rel="stylesheet" type="text/css" href="dist/css/style.css">
+
+</head>
+
+<body onload="initGame();">
+  <h1>Tic Tac Toe!</h1>
+  <p id="message"></p>
+  <table id="matrix__container">
+    <tr>
+      <td class="matrix" id="m1" onclick="nextTurn(this);"></td>
+      <td class="matrix" id="m2" onclick="nextTurn(this);"></td>
+      <td class="matrix" id="m3" onclick="nextTurn(this);"></td>
+    </tr>
+    <tr>
+      <td class="matrix" id="m4" onclick="nextTurn(this);"></td>
+      <td class="matrix" id="m5" onclick="nextTurn(this);"></td>
+      <td class="matrix" id="m6" onclick="nextTurn(this);"></td>
+    </tr>
+    <tr>
+      <td class="matrix" id="m7" onclick="nextTurn(this);"></td>
+      <td class="matrix" id="m8" onclick="nextTurn(this);"></td>
+      <td class="matrix" id="m9" onclick="nextTurn(this);"></td>
+    </tr>
+  </table>
+  <script src="dist/js/script.js"></script>
+</body>
+
+</html>

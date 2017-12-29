@@ -1,1 +1,0 @@
-# git-study-pull_request
