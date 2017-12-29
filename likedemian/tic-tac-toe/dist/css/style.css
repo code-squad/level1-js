@@ -1,0 +1,14 @@
+body {
+  width: 310px;
+  margin: auto;
+  font-family: "Gloria Hallelujah", cursive; }
+
+.matrix {
+  width: 100px;
+  height: 100px;
+  background: #F3AF1D;
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid #fff; }
+
+/*# sourceMappingURL=style.css.map */
